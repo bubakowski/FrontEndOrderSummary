@@ -1,0 +1,149 @@
+* {
+	font-family: "Red Hat Display", sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--brightblue: hsl(245, 75%, 52%);
+	--paleblue: hsl(225, 100%, 94%);
+	--verypaleblue: hsl(225, 100%, 98%);
+	--desaturatedblue: hsl(224, 23%, 55%);
+	--darkblue: hsl(223, 47%, 23%);
+}
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* background */
+	background: url(images/pattern-background-desktop.svg);
+	background-repeat: no-repeat;
+	background-color: var(--paleblue);
+	background-size: 100%;
+}
+.card {
+	margin-top: 10vh;
+	margin-bottom: 10vh;
+	display: block;
+	border-radius: 10px;
+	background-color: white;
+	box-shadow: 0px 20px 15px rgba(87, 85, 85, 0.2);
+	width: 30vw;
+}
+main h2,
+p {
+	text-align: center;
+}
+h2 {
+	color: var(--darkblue);
+}
+main {
+	font-size: 16px;
+}
+
+.img {
+	border-radius: 10px 10px 0px 0px;
+	width: 100%;
+}
+.plan {
+	display: grid;
+	grid-template-areas: "img text change";
+	column-gap: 0;
+	justify-content: space-between;
+	border-radius: 10px;
+	padding: 2%;
+	margin: 5vh 10%;
+	background-color: var(--verypaleblue);
+}
+.plan img {
+	align-self: center;
+	grid-area: img;
+	padding-left: 30%;
+}
+.plan p {
+	grid-area: text;
+	line-height: 2;
+	transform: translate(-20%);
+}
+.plan a {
+	align-self: center;
+	grid-area: change;
+	padding-right: 1vw;
+}
+.plan a:hover {
+	opacity: 0.6;
+}
+
+.order {
+	text-align: center;
+	display: grid;
+	row-gap: 20px;
+	grid-template-areas:
+		"payment payment payment payment payment"
+		"left order order order right";
+}
+
+#procced {
+	grid-area: payment;
+	/* text-align: center; */
+	background-color: var(--brightblue);
+	box-shadow: 0 5px 20px grey;
+	border-radius: 10px;
+	padding: 10px;
+	color: white;
+	margin: 0 10%;
+	/* line-height: 75px; */
+}
+#procced:hover {
+	opacity: 0.6;
+}
+
+#cancel {
+	grid-area: order;
+	padding-bottom: 5vh;
+	font-weight: 900;
+	color: var(--desaturatedblue);
+}
+#cancel:hover {
+	color: var(--darkblue);
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+}
+.order a {
+	text-decoration: none;
+}
+.bold {
+	font-weight: 900;
+}
+.color {
+	color: var(--desaturatedblue);
+}
+@media screen and (max-width: 375px) {
+	.card {
+		width: 90vw;
+		height: 80vh;
+	}
+	.plan  {
+		display: flex;
+		flex-direction: row;
+		padding:0;
+		margin: 5%;
+	}
+	.plan a{
+		padding-right: 10px;
+	}
+	/* .plan p{
+		transform: translate(-20%);
+	} */
+	
+	.plan img{
+		justify-content: flex-start;
+		padding-left: 10px;
+	}
+	#procced{
+		margin: 0 5%
+	}
+}
